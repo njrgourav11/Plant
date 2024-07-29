@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "name": "Rahul Kumar",
+      "email": "rahulkumar@gmail.com",
+      "password": "password123",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Swagat Beaura",
+      "email": "swagatb123@gmail.com",
+      "password": "password123",
+      "role": "user"
+    },
+    {
+      "id": 3,
+      "name": "User 3",
+      "email": "user3@gmail.com",
+      "password": "password123",
+      "role": "user"
+    }
+  ]
