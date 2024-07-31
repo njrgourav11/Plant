@@ -9,25 +9,23 @@ function Header() {
   const isHomePage = location.pathname === '/'; // Adjust if your home page route is different
 
   return (
-    <header>
+    <header className="header-container">
       <div className="logo">
-        <a href="#">B.planet</a>
+        <Link to="/">B.planet</Link>
       </div>
       {!isContactPage && (
-        <nav>
+        <nav className="nav-container">
           <ul>
             {isHomePage ? (
               <>
                 <li><Link to="/contact" className="contact-button">Contact Us</Link></li>
-                <li>
-                  <img src={Pfp} alt="Profile" className="profile-pic" />
-                </li>
+               
+                <li>                
+                    <img src={Pfp} alt="Profile" className="profile-pic" />
+                                </li>
               </>
             ) : (
-              <>
-                <li><Link to="/contact" className="contact-button">Contact Us</Link></li>
-                {/* Add any additional links or elements for other pages here */}
-              </>
+              <li><Link to="/contact" className="contact-button">Contact Us</Link></li>
             )}
           </ul>
         </nav>

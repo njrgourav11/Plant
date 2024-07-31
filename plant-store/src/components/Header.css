@@ -1,51 +1,50 @@
 /* Header styling */
 header {
-    background-color: #fff9f0; /* Background color of the header */
+    background-color:#c9c0b1; /* Background color of the header */
     padding: 10px 20px; /* Add some padding to the header */
     display: flex;
-    margin-top: 5px;
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
     position: relative; /* Ensure relative positioning for absolute elements if needed */
-}
-
-.logo a {
+  }
+  
+  .logo a {
     flex: 1;
     text-align: center;
     font-size: 28px;
     font-weight: bold;
     text-decoration: none;
     color: #000; /* Logo text color */
-}
-
-nav {
+  }
+  
+  nav {
     position: absolute;
     right: 20px; /* Adjust right margin as needed */
-}
-
-nav ul {
+  }
+  
+  nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     align-items: center;
-}
-
-nav ul li {
+  }
+  
+  nav ul li {
     margin-left: 20px; /* Space between navigation items */
-}
-
-nav ul li a {
+  }
+  
+  nav ul li a {
     text-decoration: none;
     color: #000000; /* Text color for navigation links */
     font-size: 16px;
-}
-
-nav ul li a:hover {
+  }
+  
+  nav ul li a:hover {
     text-decoration: underline; /* Underline on hover for links */
-}
-
-.contact-button {
+  }
+  
+  .contact-button {
     display: inline-block;
     padding: 10px 20px;
     background-color: transparent; /* Transparent background */
@@ -53,20 +52,23 @@ nav ul li a:hover {
     text-decoration: none;
     border-radius: 20px; /* Rounded corners */
     font-size: 16px;
+    margin-right: 100px;
     font-weight: bold;
     border: 2px solid #000000; /* Black border */
     transition: background-color 0.3s, color 0.3s; /* Add transition for color change */
-}
-
-.contact-button:hover {
+  }
+  
+  .contact-button:hover {
     background-color: #000000; /* Black background on hover */
     color: #fff; /* White text color on hover */
-}
-
-.profile-pic {
-    width: 40px; /* Adjust as needed */
-    height: 40px; /* Adjust as needed */
-    border-radius: 50%; /* Circular profile picture */
-    object-fit: cover;
   }
-
+  
+  .profile-pic {
+    border-radius: 50%;
+    border: 2px solid #fff; /* Optional border */
+    width: 40px; /* Width of the profile picture */
+    height: 40px; /* Height of the profile picture */
+    margin-right: 10px; 
+    top: 100%;
+  }
+  
