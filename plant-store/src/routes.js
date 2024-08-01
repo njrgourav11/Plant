@@ -1,27 +1,25 @@
-// src/RoutesComponent.js
-import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import Login from './components/Login';
 import ProductList from './components/ProductsPage';
 import ProductDescription from './components/ProductDescription';
-import AdminProductDescription from './components/Admin';
+import AdminProductDescription from './components/Admin/Prod';
+import AdminHome from './components/Admin/Home';
+import AdminProducts from './components/Admin/Product';
+import AdminSettings from './components/Admin/Profile';
 import Header from './components/Header';
 import Contact from './components/Contact';
 import Profile from './components/Profile';
 import Homepage from './components/Hero';
-import { useSelector, useDispatch } from 'react-redux';
 
 const RoutesComponent = () => {
-  const products = useSelector((state) => state.products.products); // Adjust based on your store setup
-  const user = useSelector((state) => state.products.user); // Ensure this matches your state structure
+  const userRole = localStorage.getItem('userRole');
+  const isAdmin = userRole === 'admin';
 
-  const dispatch = useDispatch();
-
-  // Example: Dispatch an action to set products
-  const setProducts = (products) => {
-    dispatch({ type: 'SET_PRODUCTS', payload: products });
-  };
-
+  console.log('User Role:', userRole);
+  console.log('Is Admin:', isAdmin);
+  
   return (
     <BrowserRouter>
       <Header /> {/* The Header will be included on every page */}
@@ -32,7 +30,28 @@ const RoutesComponent = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/products" element={<ProductList />} />
         <Route path="/products/:id" element={<ProductDescription />} />
-        <Route path="/admin/products/:productId" element={<AdminProductDescription />} />
+        
+        {/* Admin routes */}
+        <Route 
+          path="/admin/home" 
+          element={isAdmin ? <AdminHome /> : <Navigate to="/" />} 
+        />
+        <Route 
+          path="/admin/products" 
+          element={isAdmin ? <AdminProducts /> : <Navigate to="/" />} 
+        />
+        <Route 
+          path="/admin/products/:productId" 
+          element={isAdmin ? <AdminProductDescription /> : <Navigate to="/" />} 
+        />
+        <Route 
+          path="/admin/settings" 
+          element={isAdmin ? <AdminSettings /> : <Navigate to="/" />} 
+        />
+        <Route 
+          path="/admin/products/add" 
+          element={isAdmin ? <AdminProductDescription /> : <Navigate to="/" />} 
+        />
       </Routes>
     </BrowserRouter>
   );

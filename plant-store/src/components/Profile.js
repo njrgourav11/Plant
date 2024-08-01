@@ -55,6 +55,8 @@ function Profile() {
 
 
   return (
+    <div>
+      <h2 className="featured-heading">Profile</h2>
     <div className="profile-container">
       <div className="profile-box">
         <div className="profile-header">
@@ -106,6 +108,7 @@ function Profile() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

@@ -13,19 +13,24 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+  
     try {
       const response = await fetch('/data/users.json');
       const users = await response.json();
-
+  
       const matchedUser = users.find(
         (user) => user.email === email && user.password === password
       );
-
+  
       if (matchedUser) {
         localStorage.setItem('loggedInUserEmail', matchedUser.email);
+        localStorage.setItem('userRole', matchedUser.role); // Save user role
         setError('');
-        navigate('/profile'); // Redirect to profile page
+        if (matchedUser.role === 'admin') {
+          navigate('/admin/home');
+        } else {
+          navigate('/');
+        }
       } else {
         setError('Invalid email or password');
       }
@@ -34,10 +39,12 @@ const Login = () => {
       setError('An error occurred');
     }
   };
+  
 
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
+
 
   return (
     <div className="page-content">
@@ -89,7 +96,7 @@ const Login = () => {
                   >
                     <img src={EyeIcon} alt="Toggle visibility" />
                   </button>
-                  <a href="#" className="forgot-password">Forgot Password?</a>
+                  <a href="/login" className="forgot-password">Forgot Password?</a>
                 </label>
               </div>
               <div className="form-row-last">
@@ -102,7 +109,7 @@ const Login = () => {
               </div>
               {error && <p className="error-message">{error}</p>}
               <p className="signup-text">
-                Don't have an account? <a href="#" className="signup-link">Sign up for free</a>
+                Don't have an account? <a href="/signup" className="signup-link">Sign up for free</a>
               </p>
             </div>
           </form>

@@ -1,6 +1,6 @@
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px;
 }
@@ -10,9 +10,16 @@
   padding: 15px;
   text-align: center;
 }
+.featured-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #374736;
+}
+
 
 .product-card img {
-  width: 100%;
+  width: 30%;
   height: auto;
 }
 

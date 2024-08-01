@@ -52,7 +52,7 @@ header {
     text-decoration: none;
     border-radius: 20px; /* Rounded corners */
     font-size: 16px;
-    margin-right: 100px;
+    margin-right: 60px;
     font-weight: bold;
     border: 2px solid #000000; /* Black border */
     transition: background-color 0.3s, color 0.3s; /* Add transition for color change */
@@ -63,12 +63,12 @@ header {
     color: #fff; /* White text color on hover */
   }
   
-  .profile-pic {
+  .profile-pic1 {
     border-radius: 50%;
     border: 2px solid #fff; /* Optional border */
-    width: 40px; /* Width of the profile picture */
-    height: 40px; /* Height of the profile picture */
-    margin-right: 10px; 
+    width: 50px; /* Width of the profile picture */
+    height: 50px; /* Height of the profile picture */
+    margin-right: 30px; 
     top: 100%;
   }
   

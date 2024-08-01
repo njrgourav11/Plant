@@ -1,17 +1,18 @@
 import React from 'react';
-import './Hero.css';  // Ensure you have the corresponding CSS file
-import One from '../assets/Hero1.png';
-import Two from '../assets/Hero2.png';
-import Feature from "./ProductsPage";
+import './Home.css';  // Ensure you have the corresponding CSS file
+import One from '../../assets/Hero1.png';
+import Two from '../../assets/Hero2.png';
+import Feature from "./Product";
 import Profile from "./Profile";
-import Contact from "./Contact";
+import Contact from "../Contact";
+import Prod from "./Prod";
 
 const Homepage = () => {
   return (
     <>
       <div className="homepage-container">
         <div className="text-section">
-          <h1>'As Interesting <br /> as a Plant'</h1>
+          <h1>'Heading'</h1>
         </div>
         <div className="image-section">
           <img src={Two} alt="Plant 2" className="image-right" />
@@ -19,8 +20,10 @@ const Homepage = () => {
         </div>
       </div>
       <Feature/>
+      <Prod/>
       <Profile/>
       <Contact/>
+      
     </>
   );
 };
