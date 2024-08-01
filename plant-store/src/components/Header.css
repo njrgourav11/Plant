@@ -10,7 +10,7 @@ header {
   
   .logo a {
     flex: 1;
-    text-align: center;
+    text-align: left;
     font-size: 28px;
     font-weight: bold;
     text-decoration: none;
@@ -44,7 +44,7 @@ header {
     text-decoration: underline; /* Underline on hover for links */
   }
   
-  .contact-button {
+  .contact-button{
     display: inline-block;
     padding: 10px 20px;
     background-color: transparent; /* Transparent background */
@@ -62,7 +62,24 @@ header {
     background-color: #000000; /* Black background on hover */
     color: #fff; /* White text color on hover */
   }
-  
+  .login-button{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent; /* Transparent background */
+    color: #000000; /* Button text color */
+    text-decoration: none;
+    border-radius: 20px; /* Rounded corners */
+    font-size: 16px;
+    margin-right: 60px;
+    font-weight: bold;
+    border: 2px solid #000000; /* Black border */
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .login-button:hover {
+    background-color: #000000; /* Black background on hover */
+    color: #fff; /* White text color on hover */
+  }
+
   .profile-pic1 {
     border-radius: 50%;
     border: 2px solid #fff; /* Optional border */

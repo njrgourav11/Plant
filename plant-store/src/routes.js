@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Login from './components/Login';
 import ProductList from './components/ProductsPage';
 import ProductDescription from './components/ProductDescription';
@@ -16,14 +16,17 @@ import Homepage from './components/Hero';
 const RoutesComponent = () => {
   const userRole = localStorage.getItem('userRole');
   const isAdmin = userRole === 'admin';
+  const isAuthenticated = Boolean(localStorage.getItem('loggedInUserEmail'));
 
-  console.log('User Role:', userRole);
-  console.log('Is Admin:', isAdmin);
-  
   return (
     <BrowserRouter>
       <Header /> {/* The Header will be included on every page */}
       <Routes>
+        {/* Redirect to login if not authenticated */}
+        <Route
+          path="*"
+          element={isAuthenticated ? <Navigate to="/" /> : <Navigate to="/login" />}
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Homepage />} />
         <Route path="/contact" element={<Contact />} />
